@@ -86,15 +86,15 @@ class PortTests(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which('bash'), 'Git Bash/bash required')
     def test_config_resolution_executes(self):
-        result = subprocess.run(['bash', '.codex/hooks/yaml-helper.sh', 'resolve_config', '--keys', 'workflow,automation,qa.level'], cwd=ROOT, text=True, encoding='utf-8', capture_output=True)
-        self.assertEqual(result.returncode, 0, result.stderr)
+        result = subprocess.run([shutil.which('bash'), '.codex/hooks/yaml-helper.sh', 'resolve_config', '--keys', 'workflow,automation,qa.level'], cwd=ROOT, text=True, encoding='utf-8', capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('minimal', result.stdout)
         self.assertIn('collaborative', result.stdout)
 
     @unittest.skipUnless(shutil.which('bash'), 'Git Bash/bash required')
     def test_skill_linter_reads_every_skill(self):
-        result = subprocess.run(['bash', '.codex/scripts/skill-lint.sh', 'all'], cwd=ROOT, text=True, encoding='utf-8', capture_output=True)
-        self.assertEqual(result.returncode, 0, result.stderr)
+        result = subprocess.run([shutil.which('bash'), '.codex/scripts/skill-lint.sh', 'all'], cwd=ROOT, text=True, encoding='utf-8', capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertEqual(result.stdout.splitlines()[-1], 'checked\t74 of 74')
         self.assertNotIn('missing=name', result.stdout)
 
