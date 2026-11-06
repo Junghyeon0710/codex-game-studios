@@ -2,6 +2,7 @@ name: Validate Codex port
 on:
   push:
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
