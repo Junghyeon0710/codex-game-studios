@@ -1,0 +1,4 @@
+# Reference checklist only; Codex is not assumed to consume this file.
+# When making an isolated worktree, explicitly review whether this local
+# workflow preference file should be copied. Never copy credentials.
+project.local.yaml

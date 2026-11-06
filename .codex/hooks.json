@@ -1,0 +1,131 @@
+{
+  "description": "Codex Game Studios checks. Review and trust before use; no permission grants.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py SessionStart",
+            "command_windows": "python .codex/hooks/codex_adapter.py SessionStart",
+            "timeout": 60,
+            "statusMessage": "Checking studio SessionStart"
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py PostCompact",
+            "command_windows": "python .codex/hooks/codex_adapter.py PostCompact",
+            "timeout": 60,
+            "statusMessage": "Checking studio PostCompact"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py PreCompact",
+            "command_windows": "python .codex/hooks/codex_adapter.py PreCompact",
+            "timeout": 60,
+            "statusMessage": "Checking studio PreCompact"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py Stop",
+            "command_windows": "python .codex/hooks/codex_adapter.py Stop",
+            "timeout": 60,
+            "statusMessage": "Checking studio Stop"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py SubagentStart",
+            "command_windows": "python .codex/hooks/codex_adapter.py SubagentStart",
+            "timeout": 60,
+            "statusMessage": "Checking studio SubagentStart"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py SubagentStop",
+            "command_windows": "python .codex/hooks/codex_adapter.py SubagentStop",
+            "timeout": 60,
+            "statusMessage": "Checking studio SubagentStop"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py PermissionRequest",
+            "command_windows": "python .codex/hooks/codex_adapter.py PermissionRequest",
+            "timeout": 60,
+            "statusMessage": "Checking studio PermissionRequest"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py PreToolUse",
+            "command_windows": "python .codex/hooks/codex_adapter.py PreToolUse",
+            "timeout": 60,
+            "statusMessage": "Checking studio PreToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/codex_adapter.py PostToolUse",
+            "command_windows": "python .codex/hooks/codex_adapter.py PostToolUse",
+            "timeout": 60,
+            "statusMessage": "Checking studio PostToolUse"
+          }
+        ]
+      }
+    ]
+  }
+}
